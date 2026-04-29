@@ -22,6 +22,7 @@ export default function Nav() {
     { label: 'Products', href: '/products/shilajit' },
     { label: 'Our Standard', href: '/our-standard' },
     { label: 'The Founder', href: '/founder' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   return (

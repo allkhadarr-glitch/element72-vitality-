@@ -171,6 +171,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── MEDIA / COMMUNITY ── */}
+      <section className="px-6 py-28 md:py-40 border-t border-obsidian/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 reveal">
+            <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-4">Follow the Journey</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-obsidian leading-snug max-w-xl">
+              170,000 people are already watching.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-obsidian/[0.08] mb-10">
+            {/* TikTok */}
+            <a href="https://tiktok.com/@element72vitality" target="_blank" rel="noopener noreferrer"
+              className="group bg-cream p-10 flex flex-col gap-6 hover:bg-parchment transition-colors duration-300 reveal">
+              <p className="font-sans text-[9px] tracking-[0.45em] text-gold uppercase">TikTok</p>
+              <p className="font-serif text-4xl text-obsidian">170K+</p>
+              <p className="font-sans text-obsidian/35 text-sm leading-relaxed">
+                Follow the sourcing journey, product development, and the story of building Element 72 from Nairobi.
+              </p>
+              <p className="font-sans text-[9px] tracking-[0.35em] text-obsidian/25 uppercase group-hover:text-gold transition-colors duration-200">
+                @element72vitality →
+              </p>
+            </a>
+
+            {/* Instagram */}
+            <a href="https://instagram.com/element72vitality" target="_blank" rel="noopener noreferrer"
+              className="group bg-parchment p-10 flex flex-col gap-6 hover:bg-cream transition-colors duration-300 reveal reveal-d2">
+              <p className="font-sans text-[9px] tracking-[0.45em] text-gold uppercase">Instagram</p>
+              <p className="font-serif text-4xl text-obsidian">Behind<br />the brand.</p>
+              <p className="font-sans text-obsidian/35 text-sm leading-relaxed">
+                Sourcing visits, certification process, product testing — documented in real time.
+              </p>
+              <p className="font-sans text-[9px] tracking-[0.35em] text-obsidian/25 uppercase group-hover:text-gold transition-colors duration-200">
+                @element72vitality →
+              </p>
+            </a>
+
+            {/* Media placeholder */}
+            <div className="bg-cream p-10 flex flex-col gap-6 reveal reveal-d3">
+              <p className="font-sans text-[9px] tracking-[0.45em] text-gold uppercase">Content</p>
+              <div className="flex-1 flex flex-col items-center justify-center gap-4 border border-obsidian/[0.08] p-8">
+                <div className="w-10 h-px bg-gold/25" />
+                <p className="font-sans text-[9px] tracking-[0.4em] text-obsidian/18 uppercase text-center">
+                  Product videos &amp; rituals
+                </p>
+                <p className="font-sans text-obsidian/12 text-xs text-center">Coming with first batch</p>
+                <div className="w-10 h-px bg-gold/25" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FOUNDER QUOTE ── */}
       <section className="px-6 py-28 md:py-40 border-t border-obsidian/[0.08]">
         <div className="max-w-3xl mx-auto text-center reveal">
@@ -183,7 +236,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-5 mb-10">
             <div className="h-px w-8 bg-gold/30" />
             <p className="font-sans text-obsidian/30 text-[10px] tracking-[0.35em] uppercase">
-              Mohamed Haji · Founder, Element 72 Vitality · Nairobi
+              Founder, Element 72 Vitality · Nairobi, Kenya
             </p>
             <div className="h-px w-8 bg-gold/30" />
           </div>

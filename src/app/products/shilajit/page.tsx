@@ -13,6 +13,13 @@ const compounds = [
   { name: 'Dibenzo-α-pyrones', pct: 'Trace', role: 'Mitochondrial cofactors. Subject of ongoing clinical research.' },
 ]
 
+const ritual = [
+  { step: '01', title: 'The amount', body: 'A rice-grain sized portion — approximately 300–500mg. No more. Shilajit is dense; a small amount is correct.' },
+  { step: '02', title: 'The preparation', body: 'Dissolve in warm (not boiling) water, milk, or herbal tea. Stir until fully dissolved — 30 seconds. It should turn the liquid dark amber.' },
+  { step: '03', title: 'The timing', body: 'Take on an empty stomach in the morning. This is when mineral absorption is highest and the body is most receptive.' },
+  { step: '04', title: 'The consistency', body: 'Daily use for a minimum of 30 days before evaluating. Mineral replenishment is cumulative — this is not an acute supplement.' },
+]
+
 const testing = [
   'Heavy metals panel — lead, mercury, arsenic, cadmium',
   'Fulvic acid content — minimum 40%',
@@ -25,13 +32,12 @@ export default function ShilajitPage() {
   return (
     <div className="bg-cream">
 
-      <section className="relative min-h-[70vh] flex flex-col justify-end px-6 pb-20 overflow-hidden border-b border-obsidian/[0.08]">
+      {/* ── HERO ── */}
+      <section className="relative min-h-[75vh] flex flex-col justify-end px-6 pb-20 overflow-hidden border-b border-obsidian/[0.08]">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] rounded-full bg-gold/[0.05] blur-[130px]" />
         </div>
-        <span className="absolute font-serif font-bold select-none pointer-events-none leading-none bottom-0 right-0 text-[30vw] text-obsidian/[0.03]">
-          01
-        </span>
+        <span className="absolute font-serif font-bold select-none pointer-events-none leading-none bottom-0 right-0 text-[30vw] text-obsidian/[0.03]">01</span>
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-6 animate-fade-up delay-100">
             36°N 74°E &nbsp;·&nbsp; Himalayan Mountains &nbsp;·&nbsp; Punjab, India
@@ -46,6 +52,25 @@ export default function ShilajitPage() {
         </div>
       </section>
 
+      {/* ── MEDIA PLACEHOLDER ── */}
+      <section className="border-b border-obsidian/[0.08]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-obsidian/[0.08]">
+          <div className="bg-parchment aspect-[4/3] flex flex-col items-center justify-center gap-4 p-10">
+            <div className="w-12 h-px bg-gold/30" />
+            <p className="font-sans text-[9px] tracking-[0.5em] text-obsidian/20 uppercase text-center">Product Photography</p>
+            <p className="font-sans text-obsidian/15 text-xs text-center max-w-xs">Coming with first batch</p>
+            <div className="w-12 h-px bg-gold/30" />
+          </div>
+          <div className="bg-cream aspect-[4/3] flex flex-col items-center justify-center gap-4 p-10">
+            <div className="w-12 h-px bg-gold/30" />
+            <p className="font-sans text-[9px] tracking-[0.5em] text-obsidian/20 uppercase text-center">The Ritual — Video</p>
+            <p className="font-sans text-obsidian/15 text-xs text-center max-w-xs">How to use, filmed in detail</p>
+            <div className="w-12 h-px bg-gold/30" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT IT IS ── */}
       <section className="px-6 py-24 md:py-36 border-b border-obsidian/[0.08]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           <div className="reveal">
@@ -54,7 +79,7 @@ export default function ShilajitPage() {
               Formed over centuries.<br />Found in the mountains.
             </h2>
             <p className="font-sans text-obsidian/45 text-base leading-relaxed">
-              Shilajit is a resinous exudate that seeps from rock fissures in high-altitude mountain ranges — primarily the Himalayas — during warmer months. It forms over hundreds to thousands of years from the compression and decomposition of organic plant matter between layers of rock.
+              Shilajit is a resinous exudate that seeps from rock fissures in high-altitude mountain ranges during warmer months. It forms over hundreds to thousands of years from the compression and decomposition of organic plant matter between layers of rock.
             </p>
           </div>
           <div className="reveal reveal-d2">
@@ -63,12 +88,13 @@ export default function ShilajitPage() {
               Modern diets are mineral-depleted. Soil quality has declined significantly over the last century, meaning the food supply carries far fewer trace minerals than it did for previous generations.
             </p>
             <p className="font-sans text-obsidian/45 text-base leading-relaxed">
-              Shilajit is one of the few naturally occurring substances that concentrates minerals in their organic, fulvic acid-bound form — the form that the body actually absorbs.
+              Shilajit concentrates minerals in their organic, fulvic acid-bound form — the form the body actually absorbs. This is what separates it from synthetic mineral supplements.
             </p>
           </div>
         </div>
       </section>
 
+      {/* ── THE COMPOSITION ── */}
       <section className="px-6 py-24 md:py-36 border-b border-obsidian/[0.08] bg-parchment">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 reveal">
@@ -89,15 +115,40 @@ export default function ShilajitPage() {
         </div>
       </section>
 
+      {/* ── THE RITUAL ── */}
       <section className="px-6 py-24 md:py-36 border-b border-obsidian/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 reveal">
+            <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-4">The Ritual</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-obsidian max-w-lg leading-snug">How to use it. Precisely.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-obsidian/[0.08]">
+            {ritual.map((r, i) => (
+              <div key={r.step} className={`bg-cream p-10 reveal reveal-d${i + 1}`}>
+                <div className="flex items-start gap-6">
+                  <span className="font-sans text-[9px] tracking-[0.35em] text-gold/50 mt-1 shrink-0">{r.step}</span>
+                  <div>
+                    <p className="font-sans text-[9px] tracking-[0.4em] text-obsidian/50 uppercase mb-4">{r.title}</p>
+                    <p className="font-sans text-obsidian/45 text-sm leading-relaxed">{r.body}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 font-sans text-obsidian/25 text-xs tracking-wide reveal">
+            Note: Consult a healthcare professional if pregnant, nursing, or on medication.
+          </p>
+        </div>
+      </section>
+
+      {/* ── SOURCE + TESTING ── */}
+      <section className="px-6 py-24 md:py-36 border-b border-obsidian/[0.08] bg-parchment">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           <div className="reveal">
             <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-8">The Source</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-obsidian leading-snug mb-8">
-              Aveda Ayur.<br />Punjab, India.
-            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-obsidian leading-snug mb-8">Aveda Ayur. Punjab, India.</h2>
             <p className="font-sans text-obsidian/45 text-base leading-relaxed mb-6">
-              Our shilajit is sourced from Aveda Ayur in Punjab, India — an established supplier with full traceability from high-altitude collection to purification.
+              Sourced from Aveda Ayur in Punjab — an established supplier with full traceability from high-altitude collection to purification.
             </p>
             <p className="font-sans text-obsidian/45 text-base leading-relaxed">
               Raw shilajit requires purification before it is safe for consumption. Our supplier performs this process before the material leaves India. We then test again independently in Kenya.
@@ -106,7 +157,7 @@ export default function ShilajitPage() {
           <div className="reveal reveal-d2">
             <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-8">Our Testing</p>
             <p className="font-sans text-obsidian/45 text-sm leading-relaxed mb-8">
-              Every batch is tested at an ISO 17025 accredited laboratory. The Certificate of Analysis is available for every product we sell.
+              Every batch is tested at an ISO 17025 accredited laboratory. The Certificate of Analysis ships with every product.
             </p>
             <div className="flex flex-col gap-4">
               {testing.map((t, i) => (
@@ -120,12 +171,13 @@ export default function ShilajitPage() {
         </div>
       </section>
 
-      <section className="px-6 py-24 md:py-36 bg-parchment">
+      {/* ── CTA ── */}
+      <section className="px-6 py-24 md:py-36">
         <div className="max-w-2xl mx-auto text-center reveal">
           <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-6">Coming Soon</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-obsidian mb-4 leading-snug">Currently going through Kenya certification.</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-obsidian mb-4 leading-snug">Currently going through<br />Kenya certification.</h2>
           <p className="font-sans text-obsidian/40 text-base mb-12 leading-relaxed">
-            Waitlist members are notified first — along with the full Certificate of Analysis and sourcing documentation.
+            Waitlist members notified first — with full Certificate of Analysis and sourcing documentation.
           </p>
           <SubscribeForm className="max-w-sm mx-auto" />
         </div>

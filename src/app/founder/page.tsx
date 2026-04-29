@@ -36,7 +36,7 @@ export default function FounderPage() {
           </blockquote>
           <div className="flex items-center justify-center gap-5 animate-fade-up delay-300">
             <div className="h-px w-8 bg-gold/30" />
-            <p className="font-sans text-obsidian/30 text-[10px] tracking-[0.4em] uppercase">Mohamed Haji &nbsp;·&nbsp; Nairobi, Kenya</p>
+            <p className="font-sans text-obsidian/30 text-[10px] tracking-[0.4em] uppercase">Founder, Element 72 Vitality &nbsp;·&nbsp; Nairobi, Kenya</p>
             <div className="h-px w-8 bg-gold/30" />
           </div>
         </div>
