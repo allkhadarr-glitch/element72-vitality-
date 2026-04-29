@@ -5,13 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#080808',
+        cream: '#F5F0E8',
+        parchment: '#EDE8DC',
+        obsidian: '#1A1208',
         ivory: '#F2EBD9',
         gold: '#BF9A52',
         'gold-light': '#D4B46A',
-        terracotta: '#6B3A2A',
-        card: '#101010',
-        border: '#1C1C1C',
+        card: '#EDE8DC',
+        border: '#DDD8CE',
       },
       fontFamily: {
         serif: ['var(--font-playfair)'],

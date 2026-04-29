@@ -12,8 +12,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #080808;
-  color: #F2EBD9;
+  background-color: #F5F0E8;
+  color: #1A1208;
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,10 +36,10 @@ body::after {
 .font-sans  { font-family: var(--font-inter); }
 
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #080808; }
-::-webkit-scrollbar-thumb { background: rgba(191, 154, 82, 0.4); }
+::-webkit-scrollbar-track { background: #F5F0E8; }
+::-webkit-scrollbar-thumb { background: rgba(191, 154, 82, 0.5); }
 
-::selection { background-color: rgba(191,154,82,0.3); color: #F2EBD9; }
+::selection { background-color: rgba(191,154,82,0.25); color: #1A1208; }
 
 /* ── Keyframes ── */
 @keyframes fade-up {
