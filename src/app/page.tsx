@@ -1,259 +1,251 @@
+import Link from 'next/link'
 import SubscribeForm from '@/components/SubscribeForm'
 
-const pillars = [
-  {
-    label: 'Single-Origin',
-    desc: 'Every product traces back to a specific source — named, verified, documented.',
-  },
-  {
-    label: 'Science-Backed',
-    desc: 'We cite research, not vague claims. Every product has a clean Certificate of Analysis.',
-  },
-  {
-    label: 'Properly Certified',
-    desc: 'We go through full Kenya certification. No shortcuts. No grey markets.',
-  },
-  {
-    label: 'Earth-Derived',
-    desc: 'Ancient substances formed over centuries. Nothing synthesised. Nothing artificial.',
-  },
-]
+const marqueeText = 'SINGLE ORIGIN · THIRD PARTY TESTED · KEBS CERTIFIED · MINERAL RICH · EARTH DERIVED · NAIROBI, KENYA · '
 
 const products = [
   {
     name: 'Shilajit Resin',
+    coords: '36°N 74°E',
     origin: 'Himalayan Mountains · Punjab, India',
-    desc: 'One of nature\'s most mineral-dense substances. Contains up to 72 trace minerals in their most bioavailable form — fulvic acid-bound and tested.',
-    status: 'Certification in progress',
-    badge: 'Coming Soon',
+    desc: 'Formed over centuries from decomposed organic matter compressed between Himalayan rock. Contains up to 72 trace minerals in their most bioavailable form.',
+    status: 'Certification in process',
+    href: '/products/shilajit',
   },
   {
     name: 'Black Seed Oil',
+    coords: '0°N 37°E',
     origin: 'East Africa',
-    desc: 'Cold-pressed Nigella Sativa. Used for millennia. Single-origin, unrefined, third-party tested for purity and potency.',
+    desc: 'Cold-pressed Nigella sativa. Used across the Middle East and Africa for over two thousand years. Single-origin, unrefined, third-party tested for thymoquinone content.',
     status: 'Sourcing underway',
-    badge: 'Coming Soon',
+    href: '/products/black-seed-oil',
   },
+]
+
+const pillars = [
+  { label: 'Single-Origin', desc: 'Every product traces to a named source — farm, region, altitude, season.' },
+  { label: 'Science-Backed', desc: 'We cite research, not claims. Every batch has a Certificate of Analysis.' },
+  { label: 'Properly Certified', desc: 'Full Kenya regulatory certification. No shortcuts. No grey markets.' },
+  { label: 'Earth-Derived', desc: 'Ancient substances formed over centuries. Nothing synthesised. Nothing artificial.' },
 ]
 
 export default function Home() {
   return (
-    <main className="bg-obsidian min-h-screen">
+    <div className="bg-obsidian">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+      <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden">
 
-        {/* Background glow */}
+        {/* Radial glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/[0.04] blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gold/[0.03] blur-[140px]" />
         </div>
 
-        {/* Background 72 */}
-        <span className="absolute font-serif font-bold text-[32vw] text-white/[0.025] select-none pointer-events-none leading-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* Watermark 72 */}
+        <span className="absolute font-serif font-bold select-none pointer-events-none leading-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] text-white/[0.018]">
           72
         </span>
 
-        {/* Content */}
         <div className="relative z-10 text-center max-w-2xl mx-auto w-full">
 
           {/* Eyebrow */}
-          <p className="animate-fade-up delay-100 text-gold text-[10px] tracking-[0.5em] uppercase mb-10 font-sans">
+          <p className="animate-fade-up delay-100 font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-10">
             Kenya &nbsp;·&nbsp; Premium Wellness
           </p>
 
           {/* Wordmark */}
           <div className="animate-fade-up delay-200 mb-10">
-            <div className="flex items-center justify-center gap-4 mb-1">
-              <div className="h-px w-12 bg-gold/40" />
-              <span className="font-serif text-[11px] tracking-[0.6em] text-gold/70 uppercase">Est. 2026</span>
-              <div className="h-px w-12 bg-gold/40" />
+            <div className="flex items-center justify-center gap-5 mb-2">
+              <div className="h-px w-10 bg-gold/35" />
+              <span className="font-sans text-[9px] tracking-[0.6em] text-gold/50 uppercase">Est. 2026</span>
+              <div className="h-px w-10 bg-gold/35" />
             </div>
-            <h1 className="font-serif text-6xl md:text-8xl text-ivory tracking-tight leading-none">
+            <h1 className="font-serif text-[clamp(3.5rem,12vw,7rem)] text-ivory tracking-tight leading-none">
               Element 72
             </h1>
-            <p className="font-sans text-[11px] tracking-[0.6em] text-ivory/40 uppercase mt-3">
+            <p className="font-sans text-[10px] tracking-[0.7em] text-ivory/30 uppercase mt-3">
               Vitality
             </p>
           </div>
 
           {/* Tagline */}
-          <p className="animate-fade-up delay-300 font-sans text-ivory/55 text-lg md:text-xl leading-relaxed mb-12 px-4">
+          <p className="animate-fade-up delay-300 font-sans text-ivory/50 text-lg md:text-xl leading-relaxed mb-12">
             Earth-derived. Mineral-rich. Built in Kenya.
           </p>
 
           {/* Form */}
-          <div className="animate-fade-up delay-400 mb-4">
+          <div id="waitlist" className="animate-fade-up delay-400 mb-5">
             <SubscribeForm />
           </div>
 
-          <p className="animate-fade-up delay-500 font-sans text-ivory/20 text-[11px] tracking-widest uppercase">
+          <p className="animate-fade-up delay-500 font-sans text-ivory/18 text-[10px] tracking-[0.4em] uppercase">
             Be first &nbsp;·&nbsp; No spam &nbsp;·&nbsp; Ever
           </p>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ivory/20 animate-fade-in delay-600">
-          <span className="font-sans text-[9px] tracking-[0.4em] uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gold/30 to-transparent" />
+        {/* Scroll cue */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ivory/20 animate-fade-in delay-800">
+          <span className="font-sans text-[8px] tracking-[0.5em] uppercase">Scroll</span>
+          <div className="w-px h-10 bg-gradient-to-b from-gold/25 to-transparent" />
         </div>
       </section>
 
-      {/* ── THE NAME ── */}
-      <section className="px-6 py-24 md:py-32 max-w-3xl mx-auto text-center border-t border-border">
-        <p className="font-sans text-[10px] tracking-[0.5em] text-gold uppercase mb-8">The Name</p>
-        <h2 className="font-serif text-3xl md:text-5xl text-ivory leading-snug mb-8">
-          72 is not a number.<br />It is a composition.
-        </h2>
-        <p className="font-sans text-ivory/50 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-          Shilajit — our founding product — is one of the most complex substances found in nature.
-          Formed over centuries in the Himalayan mountains, it contains up to 72 trace minerals in
-          their most bioavailable form. We named Element 72 after every one of them.
-        </p>
-        <div className="mt-16 h-px w-16 bg-gold/30 mx-auto" />
-      </section>
-
-      {/* ── PILLARS ── */}
-      <section className="px-6 pb-24 md:pb-32 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border">
-          {pillars.map((p) => (
-            <div key={p.label} className="bg-obsidian p-8 md:p-10">
-              <p className="font-sans text-[10px] tracking-[0.4em] text-gold uppercase mb-4">
-                {p.label}
-              </p>
-              <p className="font-sans text-ivory/45 text-sm leading-relaxed">{p.desc}</p>
-            </div>
+      {/* ── MARQUEE ── */}
+      <div className="border-y border-white/[0.06] py-4 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[0, 1].map(i => (
+            <span key={i} className="font-sans text-[9px] tracking-[0.5em] text-ivory/20 uppercase mx-0">
+              {marqueeText.repeat(4)}
+            </span>
           ))}
         </div>
+      </div>
+
+      {/* ── THE NAME ── */}
+      <section className="px-6 py-28 md:py-40 max-w-4xl mx-auto">
+        <div className="reveal">
+          <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-10">The Name</p>
+          <h2 className="font-serif text-[clamp(2rem,6vw,4rem)] text-ivory leading-[1.15] mb-10 max-w-2xl">
+            72 is not a number.<br />It is a composition.
+          </h2>
+          <p className="font-sans text-ivory/40 text-base md:text-lg leading-relaxed max-w-xl">
+            Shilajit — our founding product — is one of the most complex substances found in nature.
+            Formed over centuries in the Himalayan mountains, compressed between ancient rock, it contains
+            up to 72 trace minerals in their most bioavailable form: bound to fulvic acid, the carrier
+            molecule that allows minerals to pass through cell membranes. We named Element 72 after every one of them.
+          </p>
+        </div>
       </section>
 
-      {/* ── COMING SOON ── */}
-      <section className="px-6 py-24 md:py-32 border-t border-border">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-sans text-[10px] tracking-[0.5em] text-gold uppercase mb-4">
-              Arriving Soon
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-ivory">
-              The founding collection
+      {/* ── PRODUCTS ── */}
+      <section className="px-6 pb-28 md:pb-40 border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto">
+          <div className="pt-16 md:pt-24 mb-16 reveal">
+            <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-4">Arriving Soon</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-ivory">The founding collection</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06]">
+            {products.map((p, i) => (
+              <Link
+                key={p.name}
+                href={p.href}
+                className={`group bg-obsidian p-10 md:p-14 flex flex-col hover:bg-white/[0.015] transition-colors duration-500 reveal reveal-d${i + 1}`}
+              >
+                {/* Coordinates */}
+                <p className="font-sans text-[9px] tracking-[0.4em] text-ivory/18 uppercase mb-8">
+                  {p.coords}
+                </p>
+
+                {/* Badge + status */}
+                <div className="flex items-center justify-between mb-10">
+                  <span className="font-sans text-[8px] tracking-[0.4em] text-gold/60 uppercase border border-gold/18 px-3 py-1.5">
+                    Coming Soon
+                  </span>
+                  <span className="font-sans text-[8px] tracking-[0.25em] text-ivory/18 uppercase">
+                    {p.status}
+                  </span>
+                </div>
+
+                {/* Name + origin */}
+                <h3 className="font-serif text-[clamp(1.8rem,4vw,3rem)] text-ivory mb-3 leading-tight">
+                  {p.name}
+                </h3>
+                <p className="font-sans text-[9px] tracking-[0.35em] text-gold/50 uppercase mb-8">
+                  {p.origin}
+                </p>
+
+                {/* Description */}
+                <p className="font-sans text-ivory/35 text-sm leading-relaxed flex-1 mb-10">
+                  {p.desc}
+                </p>
+
+                {/* CTA */}
+                <div className="flex items-center gap-3 text-ivory/30 group-hover:text-gold transition-colors duration-300">
+                  <span className="font-sans text-[9px] tracking-[0.4em] uppercase">Learn more</span>
+                  <svg width="20" height="1" viewBox="0 0 20 1" fill="none">
+                    <line x1="0" y1="0.5" x2="20" y2="0.5" stroke="currentColor" strokeWidth="0.5"
+                      className="transition-all duration-300 group-hover:x2-[30]" />
+                  </svg>
+                  <span className="font-serif text-base">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR STANDARD ── */}
+      <section className="px-6 py-28 md:py-40 border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 reveal">
+            <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-4">Our Standard</p>
+            <h2 className="font-serif text-3xl md:text-5xl text-ivory max-w-lg leading-snug">
+              We hold ourselves to a higher standard.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-            {products.map((product) => (
-              <div key={product.name} className="bg-card p-8 md:p-10 flex flex-col">
-
-                {/* Badge */}
-                <div className="flex items-center justify-between mb-8">
-                  <span className="font-sans text-[9px] tracking-[0.4em] text-gold/70 uppercase border border-gold/20 px-3 py-1.5">
-                    {product.badge}
-                  </span>
-                  <span className="font-sans text-[9px] tracking-[0.3em] text-ivory/20 uppercase">
-                    {product.status}
-                  </span>
-                </div>
-
-                {/* Product info */}
-                <h3 className="font-serif text-2xl md:text-3xl text-ivory mb-2">
-                  {product.name}
-                </h3>
-                <p className="font-sans text-[10px] tracking-[0.3em] text-gold/60 uppercase mb-6">
-                  {product.origin}
-                </p>
-                <p className="font-sans text-ivory/40 text-sm leading-relaxed flex-1">
-                  {product.desc}
-                </p>
-
-                {/* Divider */}
-                <div className="mt-8 pt-8 border-t border-border">
-                  <p className="font-sans text-xs text-ivory/25 tracking-wide">
-                    Join the waitlist to be notified first.
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.06]">
+            {pillars.map((p, i) => (
+              <div key={p.label} className={`bg-obsidian p-10 md:p-12 reveal reveal-d${i + 1}`}>
+                <div className="w-6 h-px bg-gold/40 mb-8" />
+                <p className="font-sans text-[9px] tracking-[0.45em] text-gold uppercase mb-5">{p.label}</p>
+                <p className="font-sans text-ivory/40 text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Second email capture */}
-          <div className="mt-16 text-center">
-            <p className="font-sans text-ivory/40 text-sm mb-6">
-              Waitlist members are notified 48 hours before public release.
-            </p>
-            <SubscribeForm className="max-w-sm" />
+          <div className="mt-10 reveal">
+            <Link
+              href="/our-standard"
+              className="inline-flex items-center gap-3 font-sans text-[10px] tracking-[0.4em] uppercase text-ivory/35 hover:text-gold transition-colors duration-300"
+            >
+              Read our full standard <span className="font-serif text-base">→</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── FROM THE FOUNDER ── */}
-      <section className="px-6 py-24 md:py-32 border-t border-border">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="font-sans text-[10px] tracking-[0.5em] text-gold uppercase mb-12">
-            From the Founder
-          </p>
-          <blockquote className="font-serif text-xl md:text-2xl text-ivory/70 leading-relaxed italic mb-10">
-            &ldquo;I built Element 72 because I wanted to bring products that are genuinely
+      {/* ── FOUNDER QUOTE ── */}
+      <section className="px-6 py-28 md:py-40 border-t border-white/[0.06]">
+        <div className="max-w-3xl mx-auto text-center reveal">
+          <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-14">From the Founder</p>
+          <blockquote className="font-serif text-2xl md:text-3xl text-ivory/65 leading-relaxed italic mb-12">
+            &ldquo;I built Element 72 because I wanted products that are genuinely
             sourced, genuinely tested, and genuinely explained — not just marketed.
             Everything we do starts at the source and ends with a document you can read.&rdquo;
           </blockquote>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-8 bg-gold/30" />
-            <p className="font-sans text-ivory/30 text-xs tracking-[0.3em] uppercase">
-              Founder, Element 72 Vitality · Nairobi, Kenya
+          <div className="flex items-center justify-center gap-5 mb-10">
+            <div className="h-px w-8 bg-gold/25" />
+            <p className="font-sans text-ivory/25 text-[10px] tracking-[0.35em] uppercase">
+              Mohamed Haji · Founder, Element 72 Vitality · Nairobi
             </p>
-            <div className="h-px w-8 bg-gold/30" />
+            <div className="h-px w-8 bg-gold/25" />
           </div>
+          <Link
+            href="/founder"
+            className="inline-flex items-center gap-3 font-sans text-[10px] tracking-[0.4em] uppercase text-ivory/30 hover:text-gold transition-colors duration-300"
+          >
+            Our story <span className="font-serif text-base">→</span>
+          </Link>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="border-t border-border px-6 py-12">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-
-          {/* Wordmark */}
-          <div className="text-center md:text-left">
-            <p className="font-serif text-lg text-ivory/70">Element 72</p>
-            <p className="font-sans text-[9px] tracking-[0.4em] text-ivory/25 uppercase mt-0.5">
-              Vitality
-            </p>
-          </div>
-
-          {/* Social */}
-          <div className="flex items-center gap-6">
-            <a
-              href="https://tiktok.com/@element72vitality"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-ivory/30 hover:text-gold transition-colors duration-200 group"
-              aria-label="TikTok"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z"/>
-              </svg>
-              <span className="font-sans text-[10px] tracking-[0.3em] uppercase">TikTok</span>
-            </a>
-
-            <a
-              href="https://instagram.com/element72vitality"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-ivory/30 hover:text-gold transition-colors duration-200"
-              aria-label="Instagram"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-              </svg>
-              <span className="font-sans text-[10px] tracking-[0.3em] uppercase">Instagram</span>
-            </a>
-          </div>
-
-          {/* Legal */}
-          <p className="font-sans text-ivory/15 text-[10px] tracking-wide">
-            © 2026 Element 72 Vitality. All rights reserved.
+      {/* ── FINAL CTA ── */}
+      <section id="join" className="px-6 py-28 md:py-40 border-t border-white/[0.06]">
+        <div className="max-w-2xl mx-auto text-center reveal">
+          <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-8">Join the Waitlist</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-snug">
+            Be first.
+          </h2>
+          <p className="font-sans text-ivory/35 text-base mb-12 leading-relaxed">
+            Waitlist members receive access 48 hours before public release,
+            along with the full sourcing story and Certificate of Analysis for every product.
           </p>
+          <SubscribeForm className="max-w-sm mx-auto" />
         </div>
-      </footer>
+      </section>
 
-    </main>
+    </div>
   )
 }
