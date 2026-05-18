@@ -52,7 +52,7 @@ export default function HeroSection() {
     }`
 
   return (
-    <section id="waitlist" className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden">
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden">
 
       {/* Gold particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

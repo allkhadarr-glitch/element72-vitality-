@@ -103,6 +103,12 @@ h1, h2, h3, blockquote { font-family: var(--font-playfair); font-weight: 400; }
 .reveal-d4 { transition-delay: 0.46s; }
 .reveal-d5 { transition-delay: 0.58s; }
 
+/* ── Page transition ── */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── Gold underline hover ── */
 .gold-hover { position: relative; }
 .gold-hover::after {

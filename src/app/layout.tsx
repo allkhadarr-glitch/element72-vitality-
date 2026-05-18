@@ -4,6 +4,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
+import PageTransition from '@/components/PageTransition'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -83,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <ScrollReveal />
         <main className="pt-[120px]">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
       </body>

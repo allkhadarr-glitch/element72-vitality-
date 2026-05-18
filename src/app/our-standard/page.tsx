@@ -86,7 +86,7 @@ export default function OurStandardPage() {
           <p className="font-sans text-cream/70 text-base leading-relaxed mb-12 max-w-xl mx-auto">
             It takes longer. It costs more. But a product you can actually trust is worth more than one that just claims to be trustworthy.
           </p>
-          <Link href="/#waitlist"
+          <Link href="/#join"
             className="inline-block font-sans text-[10px] tracking-[0.35em] uppercase text-earth bg-gold hover:bg-cream px-10 py-4 transition-colors duration-300">
             Join the Waitlist
           </Link>

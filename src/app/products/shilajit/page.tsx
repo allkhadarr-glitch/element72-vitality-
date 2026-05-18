@@ -312,14 +312,34 @@ function ShilajitContent() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="px-6 py-24 md:py-36">
+      <section className="px-6 py-28 md:py-40 border-t border-cream/[0.08]">
         <div className="max-w-2xl mx-auto text-center reveal">
-          <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-6">Coming Soon</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-cream mb-4 leading-snug">Currently going through<br />Kenya certification.</h2>
-          <p className="font-sans text-cream/70 text-base mb-12 leading-relaxed">
-            Waitlist members notified first — with full Certificate of Analysis and sourcing documentation.
+          <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-8">Reserve Your Jar</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-cream mb-6 leading-[1.1]">
+            First batch.<br />Limited quantity.
+          </h2>
+          <p className="font-sans text-cream/70 text-base mb-10 leading-relaxed max-w-lg mx-auto">
+            Waitlist members get 48-hour early access, the full Certificate of Analysis for Batch E72–SH01, and complete sourcing documentation before the product is listed publicly.
           </p>
+
+          <div className="flex items-center justify-center gap-10 mb-12 flex-wrap">
+            {([
+              ['20g', 'Per jar'],
+              ['ISO 17025', 'Lab standard'],
+              ['KEBS', 'Kenya certified'],
+            ] as const).map(([val, label]) => (
+              <div key={val} className="text-center">
+                <p className="font-sans text-[11px] tracking-[0.25em] text-cream/70 uppercase mb-1.5">{val}</p>
+                <p className="font-sans text-[7px] tracking-[0.35em] text-cream/28 uppercase">{label}</p>
+              </div>
+            ))}
+          </div>
+
           <SubscribeForm className="max-w-sm mx-auto" />
+
+          <p className="mt-6 font-sans text-[7px] tracking-[0.3em] text-cream/22 uppercase">
+            No payment now &nbsp;·&nbsp; Notified at launch &nbsp;·&nbsp; Unsubscribe anytime
+          </p>
         </div>
       </section>
 

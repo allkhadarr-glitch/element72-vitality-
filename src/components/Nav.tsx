@@ -120,7 +120,7 @@ export default function Nav() {
       {/* Mobile menu */}
       <div className={`md:hidden fixed inset-0 bg-earth transition-all duration-500 ${
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-      }`} style={{ top: '80px' }}>
+      }`} style={{ top: '120px' }}>
         <div className="px-6 pt-12 pb-10 flex flex-col gap-10">
           {allLinks.map((l, i) => (
             <Link

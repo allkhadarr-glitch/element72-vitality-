@@ -79,10 +79,10 @@ export default function Home() {
                 href={p.href}
                 className={`group bg-earth flex flex-col hover:bg-earth-card transition-colors duration-500 reveal reveal-d${i + 1}`}
               >
-                {/* Image slot — swap placeholder div for <Image> when photos are ready */}
-                <div className="relative bg-parchment w-full aspect-video overflow-hidden">
+                {/* Image slot — swap for <Image> when photos are ready */}
+                <div className="relative bg-earth-card w-full aspect-video overflow-hidden border-b border-cream/[0.06]">
                   <div className="absolute inset-0 flex items-center justify-center select-none">
-                    <p className="font-sans text-[7px] tracking-[0.6em] text-earth/22 uppercase">{p.name}</p>
+                    <p className="font-sans text-[7px] tracking-[0.6em] text-cream/[0.07] uppercase">{p.name}</p>
                   </div>
                 </div>
                 <div className="p-10 md:p-14 flex flex-col flex-1">

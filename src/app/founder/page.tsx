@@ -99,7 +99,7 @@ export default function FounderPage() {
           <p className="font-sans text-cream/70 text-base mb-12 leading-relaxed">
             Join the waitlist. Be first when the products launch.
           </p>
-          <Link href="/#waitlist"
+          <Link href="/#join"
             className="inline-block font-sans text-[10px] tracking-[0.35em] uppercase text-earth bg-gold hover:bg-cream px-10 py-4 transition-colors duration-300">
             Join the Waitlist
           </Link>
