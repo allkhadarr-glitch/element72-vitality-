@@ -18,13 +18,20 @@ export default function Nav() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  const links = [
+  const leftLinks = [
     { label: 'Products', href: '/products' },
     { label: 'Journal', href: '/journal' },
     { label: 'Our Standard', href: '/our-standard' },
+  ]
+
+  const rightLinks = [
     { label: 'The Founder', href: '/founder' },
     { label: 'Contact', href: '/contact' },
   ]
+
+  const allLinks = [...leftLinks, ...rightLinks]
+
+  const linkClass = 'font-sans text-[11px] tracking-[0.25em] text-cream/75 uppercase hover:text-cream transition-colors duration-200'
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -39,15 +46,31 @@ export default function Nav() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      {/* Main nav row */}
+      <div className="relative max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        <Link href="/" className="flex items-center" aria-label="Element 72 Vitality — Home">
+        {/* Left links */}
+        <div className="hidden md:flex items-center gap-10">
+          {leftLinks.map(l => (
+            <Link key={l.href} href={l.href} className={linkClass}>
+              {l.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Center logo — absolutely positioned so it never shifts the left/right groups */}
+        <Link
+          href="/"
+          className="absolute left-1/2 -translate-x-1/2 flex items-center"
+          aria-label="Element 72 Vitality — Home"
+        >
           <div
             className="overflow-hidden shrink-0 transition-all duration-700 ease-premium"
             style={{
-              width: scrolled ? '34px' : '68px',
-              height: scrolled ? '34px' : '68px',
+              width: scrolled ? '36px' : '80px',
+              height: scrolled ? '36px' : '80px',
               backgroundColor: '#080D08',
+              filter: scrolled ? 'none' : 'drop-shadow(0 0 14px rgba(201,165,90,0.25))',
             }}
           >
             <img
@@ -56,28 +79,25 @@ export default function Nav() {
               aria-hidden="true"
               className="transition-all duration-700 ease-premium"
               style={{
-                height: scrolled ? '76px' : '152px',
+                height: scrolled ? '80px' : '178px',
                 width: 'auto',
                 filter: 'invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.88)',
-                marginTop: scrolled ? '-22px' : '-44px',
+                marginTop: scrolled ? '-23px' : '-52px',
               }}
             />
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-10">
-          {links.map(l => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="font-sans text-[11px] tracking-[0.25em] text-cream/75 uppercase hover:text-cream transition-colors duration-200"
-            >
-              {l.label}
-            </Link>
-          ))}
-        </div>
+        {/* Right links + CTA + mobile hamburger */}
+        <div className="flex items-center gap-6 md:gap-10">
+          <div className="hidden md:flex items-center gap-10">
+            {rightLinks.map(l => (
+              <Link key={l.href} href={l.href} className={linkClass}>
+                {l.label}
+              </Link>
+            ))}
+          </div>
 
-        <div className="flex items-center gap-6">
           <Link
             href="/#join"
             className="hidden md:block font-sans text-[10px] tracking-[0.3em] uppercase text-earth bg-cream hover:bg-gold px-6 py-3 transition-colors duration-300"
@@ -97,11 +117,12 @@ export default function Nav() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       <div className={`md:hidden fixed inset-0 bg-earth transition-all duration-500 ${
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`} style={{ top: '80px' }}>
         <div className="px-6 pt-12 pb-10 flex flex-col gap-10">
-          {links.map((l, i) => (
+          {allLinks.map((l, i) => (
             <Link
               key={l.href}
               href={l.href}
