@@ -42,35 +42,35 @@ const standards = [
 
 export default function OurStandardPage() {
   return (
-    <div className="bg-cream">
+    <div className="bg-earth">
 
-      <section className="relative px-6 pt-16 pb-24 md:pt-24 md:pb-36 border-b border-obsidian/[0.08] overflow-hidden">
+      <section className="relative px-6 pt-16 pb-24 md:pt-24 md:pb-36 border-b border-cream/[0.08] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-gold/[0.04] blur-[130px]" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-10 animate-fade-up delay-100">Our Standard</p>
-          <h1 className="font-serif text-[clamp(2.5rem,8vw,6rem)] text-obsidian leading-none tracking-tight mb-10 animate-fade-up delay-200 max-w-3xl">
+          <h1 className="font-serif text-[clamp(2.5rem,8vw,6rem)] text-cream leading-none tracking-tight mb-10 animate-fade-up delay-200 max-w-3xl">
             We hold ourselves to a higher standard.
           </h1>
-          <p className="font-sans text-obsidian/40 text-lg leading-relaxed max-w-xl animate-fade-up delay-300">
+          <p className="font-sans text-cream/70 text-lg leading-relaxed max-w-xl animate-fade-up delay-300">
             The wellness industry has a transparency problem. Vague sourcing, proprietary blends, and unverifiable claims are the norm. We built Element 72 to be the exception.
           </p>
         </div>
       </section>
 
       {standards.map((s, i) => (
-        <section key={s.number} className={`px-6 py-20 md:py-32 border-b border-obsidian/[0.08] ${i % 2 === 1 ? 'bg-parchment' : 'bg-cream'}`}>
+        <section key={s.number} className={`px-6 py-20 md:py-32 border-b border-cream/[0.08] ${i % 2 === 1 ? 'bg-earth-card' : 'bg-earth'}`}>
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 md:gap-24">
             <div className="reveal">
-              <span className="font-serif text-[5rem] text-obsidian/[0.05] leading-none block mb-2">{s.number}</span>
+              <span className="font-serif text-[5rem] text-cream/[0.05] leading-none block mb-2">{s.number}</span>
               <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase">{s.label}</p>
             </div>
             <div className="reveal reveal-d2">
-              <h2 className="font-serif text-2xl md:text-3xl text-obsidian leading-snug mb-8">{s.heading}</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-cream leading-snug mb-8">{s.heading}</h2>
               <div className="flex flex-col gap-5">
                 {s.body.map((para, j) => (
-                  <p key={j} className="font-sans text-obsidian/42 text-base leading-relaxed">{para}</p>
+                  <p key={j} className="font-sans text-cream/58 text-base leading-relaxed">{para}</p>
                 ))}
               </div>
             </div>
@@ -78,16 +78,16 @@ export default function OurStandardPage() {
         </section>
       ))}
 
-      <section className="px-6 py-24 md:py-36 bg-parchment">
+      <section className="px-6 py-24 md:py-36 bg-earth-card">
         <div className="max-w-3xl mx-auto text-center reveal">
-          <h2 className="font-serif text-3xl md:text-4xl text-obsidian leading-snug mb-8">
+          <h2 className="font-serif text-3xl md:text-4xl text-cream leading-snug mb-8">
             This is what it means to do it properly.
           </h2>
-          <p className="font-sans text-obsidian/40 text-base leading-relaxed mb-12 max-w-xl mx-auto">
+          <p className="font-sans text-cream/70 text-base leading-relaxed mb-12 max-w-xl mx-auto">
             It takes longer. It costs more. But a product you can actually trust is worth more than one that just claims to be trustworthy.
           </p>
           <Link href="/#waitlist"
-            className="inline-block font-sans text-[10px] tracking-[0.35em] uppercase text-ivory bg-obsidian hover:bg-gold px-10 py-4 transition-colors duration-300">
+            className="inline-block font-sans text-[10px] tracking-[0.35em] uppercase text-earth bg-gold hover:bg-cream px-10 py-4 transition-colors duration-300">
             Join the Waitlist
           </Link>
         </div>

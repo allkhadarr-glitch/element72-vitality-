@@ -35,15 +35,15 @@ const channels = [
 
 export default function ContactPage() {
   return (
-    <div className="bg-cream">
+    <div className="bg-earth">
 
       {/* ── HERO ── */}
-      <section className="px-6 pt-16 pb-20 md:pt-24 md:pb-28 border-b border-obsidian/[0.08]">
+      <section className="px-6 pt-16 pb-20 md:pt-24 md:pb-28 border-b border-cream/[0.08]">
         <div className="max-w-7xl mx-auto">
           <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-8 animate-fade-up delay-100">
             Contact
           </p>
-          <h1 className="font-serif text-[clamp(3rem,8vw,6rem)] text-obsidian leading-none tracking-tight animate-fade-up delay-200 max-w-2xl">
+          <h1 className="font-serif text-[clamp(3rem,8vw,6rem)] text-cream leading-none tracking-tight animate-fade-up delay-200 max-w-2xl">
             Let&apos;s talk.
           </h1>
         </div>
@@ -58,21 +58,21 @@ export default function ContactPage() {
             <p className="font-sans text-[9px] tracking-[0.55em] text-gold uppercase mb-12">Find us</p>
             <div className="flex flex-col gap-10">
               {channels.map((c) => (
-                <div key={c.label} className="border-b border-obsidian/[0.07] pb-10">
-                  <p className="font-sans text-[9px] tracking-[0.45em] text-obsidian/35 uppercase mb-3">{c.label}</p>
+                <div key={c.label} className="border-b border-cream/[0.07] pb-10">
+                  <p className="font-sans text-[9px] tracking-[0.45em] text-cream/48 uppercase mb-3">{c.label}</p>
                   {c.href ? (
                     <a
                       href={c.href}
                       target={c.href.startsWith('http') ? '_blank' : undefined}
                       rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="font-serif text-xl text-obsidian hover:text-gold transition-colors duration-200 block mb-2"
+                      className="font-serif text-xl text-cream hover:text-gold transition-colors duration-200 block mb-2"
                     >
                       {c.value}
                     </a>
                   ) : (
-                    <p className="font-serif text-xl text-obsidian mb-2">{c.value}</p>
+                    <p className="font-serif text-xl text-cream mb-2">{c.value}</p>
                   )}
-                  <p className="font-sans text-obsidian/35 text-sm">{c.desc}</p>
+                  <p className="font-sans text-cream/48 text-sm">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -87,8 +87,8 @@ export default function ContactPage() {
       </section>
 
       {/* ── WHOLESALE / PRESS ── */}
-      <section className="px-6 py-20 md:py-28 border-t border-obsidian/[0.08] bg-parchment">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-obsidian/[0.08]">
+      <section className="px-6 py-20 md:py-28 border-t border-cream/[0.08] bg-earth-card">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-cream/[0.08]">
           {[
             {
               label: 'Wholesale & Distribution',
@@ -103,12 +103,12 @@ export default function ContactPage() {
               href: 'mailto:press@element72vitality.com',
             },
           ].map((item) => (
-            <div key={item.label} className="bg-parchment p-10 md:p-14 reveal">
+            <div key={item.label} className="bg-earth-card p-10 md:p-14 reveal">
               <p className="font-sans text-[9px] tracking-[0.45em] text-gold uppercase mb-6">{item.label}</p>
-              <p className="font-sans text-obsidian/45 text-sm leading-relaxed mb-8">{item.desc}</p>
+              <p className="font-sans text-cream/75 text-sm leading-relaxed mb-8">{item.desc}</p>
               <a
                 href={item.href}
-                className="font-sans text-[10px] tracking-[0.3em] uppercase text-obsidian hover:text-gold transition-colors duration-200"
+                className="font-sans text-[10px] tracking-[0.3em] uppercase text-cream hover:text-gold transition-colors duration-200"
               >
                 {item.cta} →
               </a>

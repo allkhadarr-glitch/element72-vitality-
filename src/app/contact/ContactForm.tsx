@@ -38,18 +38,18 @@ export default function ContactForm() {
   }
 
   const inputClass = `
-    w-full bg-white/60 border border-obsidian/12
-    text-obsidian placeholder-obsidian/30
+    w-full bg-cream/[0.05] border border-cream/[0.10]
+    text-cream placeholder-cream/25
     px-5 py-3.5 text-sm font-sans outline-none
-    focus:border-gold/50 focus:bg-white transition-colors duration-200
+    focus:border-gold/50 focus:bg-cream/[0.08] transition-colors duration-200
   `
 
   if (status === 'success') {
     return (
       <div className="py-16 text-center">
         <div className="w-10 h-px bg-gold mx-auto mb-8" />
-        <p className="font-serif text-2xl text-obsidian mb-3">Message received.</p>
-        <p className="font-sans text-obsidian/40 text-sm">We&apos;ll respond within 48 hours.</p>
+        <p className="font-serif text-2xl text-cream mb-3">Message received.</p>
+        <p className="font-sans text-cream/70 text-sm">We&apos;ll respond within 48 hours.</p>
       </div>
     )
   }
@@ -95,7 +95,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="self-start font-sans text-[10px] tracking-[0.3em] uppercase text-ivory bg-obsidian hover:bg-gold px-10 py-4 transition-colors duration-300 disabled:opacity-50"
+        className="self-start font-sans text-[10px] tracking-[0.3em] uppercase text-earth bg-gold hover:bg-cream px-10 py-4 transition-colors duration-300 disabled:opacity-50"
       >
         {status === 'loading' ? 'Sending...' : 'Send Message'}
       </button>

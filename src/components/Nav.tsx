@@ -19,7 +19,8 @@ export default function Nav() {
   }, [open])
 
   const links = [
-    { label: 'Products', href: '/products/shilajit' },
+    { label: 'Products', href: '/products' },
+    { label: 'Journal', href: '/journal' },
     { label: 'Our Standard', href: '/our-standard' },
     { label: 'The Founder', href: '/founder' },
     { label: 'Contact', href: '/contact' },
@@ -27,17 +28,41 @@ export default function Nav() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-cream/96 backdrop-blur-md border-b border-obsidian/[0.08]' : ''
+      scrolled ? 'bg-earth/96 backdrop-blur-md border-b border-cream/[0.08]' : ''
     }`}>
+
+      {/* Announcement bar */}
+      <div className="border-b border-cream/[0.06] h-10 flex items-center justify-center px-6">
+        <p className="font-sans text-[7px] tracking-[0.42em] text-cream/38 uppercase text-center">
+          Certification in progress &nbsp;·&nbsp; First batch allocated to waitlist members &nbsp;·&nbsp;{' '}
+          <a href="/#join" className="text-gold/60 hover:text-gold transition-colors duration-200">Join now →</a>
+        </p>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        <Link href="/" className="flex flex-col leading-none group">
-          <span className="font-serif text-xl text-obsidian tracking-tight group-hover:text-gold transition-colors duration-300">
-            Element 72
-          </span>
-          <span className="font-sans text-[9px] tracking-[0.5em] text-obsidian/30 uppercase">
-            Vitality
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Element 72 Vitality — Home">
+          <div
+            className="overflow-hidden shrink-0 transition-all duration-700 ease-premium"
+            style={{
+              width: scrolled ? '34px' : '68px',
+              height: scrolled ? '34px' : '68px',
+              backgroundColor: '#080D08',
+            }}
+          >
+            <img
+              src="/logo-mark.jpg"
+              alt=""
+              aria-hidden="true"
+              className="transition-all duration-700 ease-premium"
+              style={{
+                height: scrolled ? '76px' : '152px',
+                width: 'auto',
+                filter: 'invert(1)',
+                marginTop: scrolled ? '-22px' : '-44px',
+              }}
+            />
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
@@ -45,7 +70,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-sans text-[11px] tracking-[0.25em] text-obsidian/45 uppercase hover:text-obsidian transition-colors duration-200"
+              className="font-sans text-[11px] tracking-[0.25em] text-cream/75 uppercase hover:text-cream transition-colors duration-200"
             >
               {l.label}
             </Link>
@@ -54,8 +79,8 @@ export default function Nav() {
 
         <div className="flex items-center gap-6">
           <Link
-            href="/#waitlist"
-            className="hidden md:block font-sans text-[10px] tracking-[0.3em] uppercase text-ivory bg-obsidian hover:bg-gold px-6 py-3 transition-colors duration-300"
+            href="/#join"
+            className="hidden md:block font-sans text-[10px] tracking-[0.3em] uppercase text-earth bg-cream hover:bg-gold px-6 py-3 transition-colors duration-300"
           >
             Join Waitlist
           </Link>
@@ -65,14 +90,14 @@ export default function Nav() {
             className="md:hidden flex flex-col gap-1.5 p-1"
             aria-label="Toggle menu"
           >
-            <span className={`block w-6 h-px bg-obsidian transition-all duration-300 ${open ? 'rotate-45 translate-y-2.5' : ''}`} />
-            <span className={`block w-6 h-px bg-obsidian transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-            <span className={`block w-6 h-px bg-obsidian transition-all duration-300 ${open ? '-rotate-45 -translate-y-2.5' : ''}`} />
+            <span className={`block w-6 h-px bg-cream transition-all duration-300 ${open ? 'rotate-45 translate-y-2.5' : ''}`} />
+            <span className={`block w-6 h-px bg-cream transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`block w-6 h-px bg-cream transition-all duration-300 ${open ? '-rotate-45 -translate-y-2.5' : ''}`} />
           </button>
         </div>
       </div>
 
-      <div className={`md:hidden fixed inset-0 bg-cream transition-all duration-500 ${
+      <div className={`md:hidden fixed inset-0 bg-earth transition-all duration-500 ${
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`} style={{ top: '80px' }}>
         <div className="px-6 pt-12 pb-10 flex flex-col gap-10">
@@ -81,16 +106,16 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="font-serif text-3xl text-obsidian/60 hover:text-obsidian transition-colors duration-200 animate-fade-up"
+              className="font-serif text-3xl text-cream/75 hover:text-cream transition-colors duration-200 animate-fade-up"
               style={{ animationDelay: `${i * 80}ms` }}
             >
               {l.label}
             </Link>
           ))}
           <Link
-            href="/#waitlist"
+            href="/#join"
             onClick={() => setOpen(false)}
-            className="mt-4 self-start font-sans text-[10px] tracking-[0.3em] uppercase text-ivory bg-obsidian px-8 py-4"
+            className="mt-4 self-start font-sans text-[10px] tracking-[0.3em] uppercase text-earth bg-cream px-8 py-4"
           >
             Join Waitlist
           </Link>

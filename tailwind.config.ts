@@ -5,18 +5,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#F5F0E8',
+        earth: '#080D08',
+        'earth-card': '#0E140E',
+        cream: '#F0E6D0',
         parchment: '#EDE8DC',
         obsidian: '#1A1208',
         ivory: '#F2EBD9',
-        gold: '#BF9A52',
+        gold: '#C9A55A',
         'gold-light': '#D4B46A',
-        card: '#EDE8DC',
+        card: '#1C1108',
         border: '#DDD8CE',
       },
       fontFamily: {
         serif: ['var(--font-playfair)'],
         sans: ['var(--font-inter)'],
+      },
+      transitionTimingFunction: {
+        'premium': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       animation: {
         'fade-up': 'fadeUp 0.8s ease forwards',
