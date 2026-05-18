@@ -40,9 +40,9 @@ export default function Nav() {
 
       {/* Announcement bar */}
       <div className="border-b border-cream/[0.06] h-10 flex items-center justify-center px-6">
-        <p className="font-sans text-[7px] tracking-[0.42em] text-cream/38 uppercase text-center">
+        <p className="font-sans text-[11px] tracking-[0.35em] text-cream/50 uppercase text-center">
           Certification in progress &nbsp;·&nbsp; First batch allocated to waitlist members &nbsp;·&nbsp;{' '}
-          <a href="/#join" className="text-gold/60 hover:text-gold transition-colors duration-200">Join now →</a>
+          <a href="/#join" className="text-gold/80 hover:text-gold transition-colors duration-200">Join now →</a>
         </p>
       </div>
 

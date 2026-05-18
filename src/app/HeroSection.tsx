@@ -36,10 +36,10 @@ export default function HeroSection() {
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setPhase(1), 1800),
-      setTimeout(() => setPhase(2), 3400),
-      setTimeout(() => setPhase(3), 5000),
-      setTimeout(() => setPhase(4), 6400),
+      setTimeout(() => setPhase(1), 800),
+      setTimeout(() => setPhase(2), 2000),
+      setTimeout(() => setPhase(3), 3200),
+      setTimeout(() => setPhase(4), 4200),
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
@@ -81,12 +81,12 @@ export default function HeroSection() {
       <div className="relative z-10 text-center flex flex-col items-center w-full max-w-3xl mx-auto">
 
         {/* Origin label */}
-        <p className="font-sans text-[9px] tracking-[0.65em] text-gold uppercase mb-6 animate-fade-in delay-300">
+        <p className="font-sans text-[13px] tracking-[0.5em] text-gold uppercase mb-8 animate-fade-in delay-300">
           Kenya &nbsp;·&nbsp; Premium Wellness
         </p>
 
-        {/* "72." — the hook. Appears immediately. */}
-        <div className="animate-breathe mb-2">
+        {/* "72." — the hook */}
+        <div className="animate-breathe mb-4">
           <span className="font-serif text-[clamp(6rem,27vw,16rem)] text-cream leading-[0.9] tracking-tight">
             72.
           </span>
@@ -94,32 +94,32 @@ export default function HeroSection() {
 
         {/* Phase 1 — what 72 means */}
         <div className={`${reveal(1)} mb-10`}>
-          <div className="w-8 h-px bg-gold/50 mx-auto mb-5" />
-          <p className="font-sans text-[10px] tracking-[0.4em] text-cream/70 uppercase leading-relaxed">
+          <div className="w-8 h-px bg-gold/50 mx-auto mb-6" />
+          <p className="font-sans text-[14px] tracking-[0.35em] text-cream/80 uppercase leading-relaxed">
             trace minerals &nbsp;·&nbsp; formed over millions of years
           </p>
         </div>
 
         {/* Phase 2 — brand name reveal */}
         <div className={`${reveal(2)} mb-10`}>
-          <p className="font-serif text-[clamp(1.4rem,3vw,2.2rem)] text-cream tracking-tight mb-1">
+          <p className="font-serif text-[clamp(2rem,4.5vw,3.2rem)] text-cream tracking-tight mb-2">
             Element 72
           </p>
-          <p className="font-sans text-[8px] tracking-[0.8em] text-gold/55 uppercase">
+          <p className="font-sans text-[13px] tracking-[0.6em] text-gold/70 uppercase">
             Vitality
           </p>
         </div>
 
         {/* Phase 3 — the philosophical hook */}
-        <div className={`${reveal(3)} mb-12`}>
-          <p className="font-serif text-[clamp(1.1rem,2.5vw,1.6rem)] text-cream/85 italic">
+        <div className={`${reveal(3)} mb-14`}>
+          <p className="font-serif text-[clamp(1.6rem,3.5vw,2.4rem)] text-cream/90 italic">
             Not manufactured. Found.
           </p>
         </div>
 
         {/* Phase 4 — CTA */}
         <div className={`${reveal(4)} w-full`}>
-          <p className="font-sans text-[9px] tracking-[0.4em] text-cream/42 uppercase mb-5">
+          <p className="font-sans text-[13px] tracking-[0.3em] text-cream/55 uppercase mb-6">
             First access &nbsp;·&nbsp; Full sourcing story &nbsp;·&nbsp; Certificate of Analysis
           </p>
           <SubscribeForm className="max-w-sm mx-auto" />
@@ -131,7 +131,7 @@ export default function HeroSection() {
       <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-1000 ${
         phase >= 4 ? 'opacity-100' : 'opacity-0'
       }`}>
-        <span className="font-sans text-[8px] tracking-[0.5em] text-cream/30 uppercase">Scroll</span>
+        <span className="font-sans text-[11px] tracking-[0.4em] text-cream/40 uppercase">Scroll</span>
         <div className="w-px h-10 bg-gradient-to-b from-gold/30 to-transparent" />
       </div>
 

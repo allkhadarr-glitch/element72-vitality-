@@ -40,7 +40,7 @@ export default function SubscribeForm({ className = '' }: { className?: string }
           <circle cx="9" cy="9" r="8.5" stroke="currentColor" />
           <path d="M5.5 9l2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <span className="text-cream/75 text-sm tracking-wide font-sans">
+        <span className="text-cream/80 text-base tracking-wide font-sans">
           You&apos;re on the list. We&apos;ll be in touch.
         </span>
       </div>
@@ -53,21 +53,21 @@ export default function SubscribeForm({ className = '' }: { className?: string }
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
+        placeholder="Your email address"
         required
         className="
-          flex-1 bg-cream/[0.06] border border-cream/[0.12]
-          text-cream placeholder-cream/25
-          px-5 py-3.5 text-sm font-sans outline-none
-          focus:border-gold/50 focus:bg-cream/[0.09] transition-colors duration-200
+          flex-1 bg-cream/[0.06] border border-cream/[0.14]
+          text-cream text-base placeholder-cream/30
+          px-5 py-4 font-sans outline-none
+          focus:border-gold/60 focus:bg-cream/[0.09] transition-colors duration-200
         "
       />
       <button
         type="submit"
         disabled={status === 'loading'}
         className="
-          bg-gold hover:bg-cream text-earth
-          px-8 py-3.5 text-xs tracking-[0.2em] uppercase font-medium font-sans
+          bg-gold hover:bg-gold-light text-earth
+          px-8 py-4 text-[13px] tracking-[0.25em] uppercase font-medium font-sans
           transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed
           whitespace-nowrap
         "
@@ -75,7 +75,7 @@ export default function SubscribeForm({ className = '' }: { className?: string }
         {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
       </button>
       {status === 'error' && (
-        <p className="text-red-600/70 text-xs text-center sm:text-left col-span-full mt-1">{message}</p>
+        <p className="text-red-400/80 text-sm text-center sm:text-left col-span-full mt-1">{message}</p>
       )}
     </form>
   )
