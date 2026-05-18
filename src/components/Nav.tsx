@@ -58,7 +58,7 @@ export default function Nav() {
               style={{
                 height: scrolled ? '76px' : '152px',
                 width: 'auto',
-                filter: 'invert(1)',
+                filter: 'invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.88)',
                 marginTop: scrolled ? '-22px' : '-44px',
               }}
             />
