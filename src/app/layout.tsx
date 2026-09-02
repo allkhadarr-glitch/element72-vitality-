@@ -1,39 +1,47 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Montserrat } from 'next/font/google'
+import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
 import PageTransition from '@/components/PageTransition'
+import Tracker from '@/components/Tracker'
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
 })
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['300', '400', '500', '700'],
   variable: '--font-inter',
   display: 'swap',
 })
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Element 72 Vitality — Earth-Derived Wellness',
-  description: 'Single-origin wellness products. Sourced with intention. Tested without compromise. Built in Kenya, for the world.',
+  title: 'Element 72 Vitality — Proof Before Price.',
+  description: 'Every supplement we sell is third-party tested before it is priced. Single-origin, KEBS certified, fully transparent. Built in Kenya.',
   openGraph: {
-    title: 'Element 72 Vitality',
-    description: 'Earth-derived. Mineral-rich. Built in Kenya.',
+    title: 'Element 72 Vitality — Proof Before Price.',
+    description: 'Test first. Publish the result. Then set the price. Single-origin, KEBS certified, built in Kenya.',
     siteName: 'Element 72 Vitality',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Element 72 Vitality',
-    description: 'Earth-derived. Mineral-rich. Built in Kenya.',
+    title: 'Element 72 Vitality — Proof Before Price.',
+    description: 'Test first. Publish the result. Then set the price.',
   },
   verification: {
     google: 'A3m8IukNFYxYGFv3k6iKlhsUBl8GPecRgNpdJGUg9hw',
@@ -46,9 +54,9 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Element 72 Vitality',
   url: 'https://element72vitality.com',
-  logo: 'https://element72vitality.com/icon.png',
-  description: 'Single-origin wellness products. Sourced with intention. Tested without compromise. Built in Kenya, for the world.',
-  email: 'HQ@element72vitality.com',
+  logo: 'https://element72vitality.com/e72-logo.png',
+  description: 'Every supplement is third-party tested before pricing. Single-origin, KEBS certified, fully transparent.',
+  email: 'hq@element72vitality.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Nairobi',
@@ -69,7 +77,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -83,7 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Nav />
         <ScrollReveal />
-        <main className="pt-[120px]">
+        <Tracker />
+        <main className="pt-[72px]">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

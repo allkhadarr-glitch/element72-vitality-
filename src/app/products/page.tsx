@@ -3,128 +3,154 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Products — Element 72 Vitality',
-  description: 'Single-origin wellness products. Each SKU sourced with intention, third-party tested, and KEBS certified before sale.',
+  description: 'Single-origin wellness products. Each SKU sourced with intention, third-party tested, and not sold before the KEBS permit is in place.',
 }
 
 const products = [
   {
     slug: 'shilajit',
+    number: '01',
     name: 'Shilajit Resin',
-    origin: 'Punjab, India',
+    origin: 'Single origin · high-altitude source',
     tagline: 'Up to 72 trace minerals in fulvic acid-bound form.',
     detail: 'Raw Himalayan resin. Cold-extracted. Third-party tested for heavy metals, fulvic acid content, and microbial safety.',
-    status: 'waitlist',
-    category: 'Mineral Resin',
+    specs: ['20g resin', 'Heavy metals tested', 'NABL-accredited lab', 'KEBS permit SM#102053'],
+    status: 'KEBS permit granted',
   },
   {
     slug: 'black-seed-oil',
+    number: '02',
     name: 'Black Seed Oil',
+    coords: '0°N 37°E',
     origin: 'East Africa',
     tagline: 'Cold-pressed Nigella sativa. High thymoquinone.',
-    detail: 'Single-origin from Ethiopia and Eritrea. Unrefined. Tested for TQ concentration, heavy metals, and purity.',
-    status: 'waitlist',
-    category: 'Cold-Pressed Oil',
+    detail: 'Single-origin, unrefined. Tested for TQ concentration, heavy metals, and purity.',
+    specs: ['Cold pressed', 'TQ verified', 'Single origin', 'Unrefined'],
+    status: 'Sourcing underway',
   },
 ]
 
-const comingSoon = [
-  { name: 'Sea Moss', origin: 'Atlantic Coast', category: 'Marine Botanical' },
-  { name: 'Tongkat Ali', origin: 'Southeast Asia', category: 'Root Extract' },
-  { name: 'Purple Tea', origin: 'Kenya Highlands', category: 'Single-Estate Tea' },
-  { name: 'White Tea', origin: 'Kenya Highlands', category: 'Single-Estate Tea' },
+const pipeline = [
+  { name: 'Sea Moss',    origin: 'Atlantic Coast',   category: 'Marine Botanical' },
+  { name: 'Tongkat Ali', origin: 'Southeast Asia',   category: 'Root Extract' },
+  { name: 'Purple Tea',  origin: 'Kenya Highlands',  category: 'Single-Estate Tea' },
+  { name: 'White Tea',   origin: 'Kenya Highlands',  category: 'Single-Estate Tea' },
 ]
 
 export default function ProductsPage() {
   return (
     <div className="bg-earth min-h-screen">
 
-      {/* Header */}
-      <section className="px-6 pt-24 pb-16 max-w-7xl mx-auto">
-        <p className="font-sans text-[9px] tracking-[0.5em] text-gold uppercase mb-4">Our Range</p>
-        <h1 className="font-serif text-4xl md:text-5xl text-cream mb-4">Products</h1>
-        <p className="font-sans text-cream/70 text-sm leading-relaxed max-w-md">
-          Every product is single-origin, third-party tested, and will not be sold before KEBS certification is in place.
-          No exceptions.
-        </p>
+      {/* ── HEADER ── */}
+      <section className="relative px-6 pt-20 pb-24 md:pt-28 md:pb-36 border-b border-cream/[0.06] overflow-hidden">
+        <span
+          aria-hidden="true"
+          className="absolute select-none pointer-events-none font-serif leading-none right-[-2%] bottom-[-10%] text-cream/[0.025]"
+          style={{ fontSize: 'clamp(14rem, 32vw, 24rem)' }}
+        >
+          72
+        </span>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <p className="font-sans text-[10px] tracking-[0.4em] text-gold uppercase mb-8 animate-fade-up delay-100">Our Range</p>
+          <h1 className="font-serif text-[clamp(3rem,9vw,7rem)] text-cream leading-none tracking-tight mb-10 animate-fade-up delay-200">
+            Products
+          </h1>
+          <p className="font-sans text-cream/55 text-[0.95rem] leading-[1.85] max-w-md animate-fade-up delay-300">
+            Every product is single-origin, third-party tested, and will not be sold before KEBS certification is in place. No exceptions.
+          </p>
+        </div>
       </section>
 
-      {/* Active products */}
-      <section className="px-6 pb-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-cream/[0.08] border border-cream/[0.08]">
-          {products.map((product) => (
+      {/* ── ACTIVE PRODUCTS ── */}
+      <section className="px-6 py-4 border-b border-cream/[0.06]">
+        <div className="max-w-7xl mx-auto divide-y divide-cream/[0.06]">
+          {products.map((p, i) => (
             <Link
-              key={product.slug}
-              href={`/products/${product.slug}`}
-              className="group bg-earth flex flex-col hover:bg-earth-card transition-colors duration-300"
+              key={p.slug}
+              href={`/products/${p.slug}`}
+              className={`group flex flex-col md:flex-row py-16 md:py-20 gap-8 md:gap-20 hover:opacity-75 transition-opacity duration-700 reveal reveal-d${i + 1}`}
             >
-              {/* Image slot — swap placeholder div for <Image> when photos are ready */}
-              <div className="relative bg-parchment w-full aspect-video overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center select-none">
-                  <p className="font-sans text-[7px] tracking-[0.6em] text-earth/22 uppercase">{product.name}</p>
-                </div>
+              {/* Ghost number */}
+              <div className="hidden md:flex items-start pt-1 shrink-0 w-20">
+                <span className="font-serif text-[5rem] leading-none text-cream/[0.05] group-hover:text-cream/[0.09] transition-colors duration-700 select-none">
+                  {p.number}
+                </span>
               </div>
-              <div className="p-10 md:p-14 flex flex-col gap-8 flex-1">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-sans text-[9px] tracking-[0.4em] text-gold uppercase mb-1">{product.category}</p>
-                    <p className="font-sans text-[10px] tracking-wide text-cream/35">{product.origin}</p>
-                  </div>
-                  <span className="font-sans text-[9px] tracking-[0.3em] text-cream/30 uppercase border border-cream/[0.12] px-3 py-1.5">
-                    Waitlist
-                  </span>
-                </div>
 
-                <div>
-                  <h2 className="font-serif text-2xl text-cream mb-3 group-hover:text-cream/70 transition-colors duration-200">
-                    {product.name}
-                  </h2>
-                  <p className="font-sans text-cream/78 text-sm leading-relaxed mb-2">{product.tagline}</p>
-                  <p className="font-sans text-cream/58 text-xs leading-relaxed">{product.detail}</p>
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <p className="font-sans text-[10px] tracking-[0.35em] text-cream/30 uppercase mb-5">
+                  {p.coords} &nbsp;·&nbsp; {p.origin}
+                </p>
+                <h2 className="font-serif text-[clamp(2rem,5vw,3.8rem)] text-cream mb-4 leading-[1.05]">{p.name}</h2>
+                <p className="font-sans text-cream/65 text-[1rem] leading-[1.85] max-w-lg mb-3">{p.tagline}</p>
+                <p className="font-sans text-cream/40 text-[0.9rem] leading-[1.8] max-w-lg mb-8">{p.detail}</p>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {p.specs.map(s => (
+                    <span key={s} className="font-sans text-[9px] tracking-[0.25em] text-cream/30 uppercase border border-cream/[0.08] px-3 py-1.5">
+                      {s}
+                    </span>
+                  ))}
                 </div>
+                <p className="font-sans text-[11px] tracking-[0.4em] text-cream/35 uppercase group-hover:text-gold transition-colors duration-300">
+                  Learn more →
+                </p>
+              </div>
 
-                <div className="flex items-center gap-2 mt-auto">
-                  <span className="font-sans text-[10px] tracking-[0.3em] text-cream/58 uppercase group-hover:text-gold transition-colors duration-200">
-                    Learn more
-                  </span>
-                  <span className="text-cream/30 group-hover:text-gold transition-colors duration-200 text-sm">→</span>
-                </div>
+              {/* Status */}
+              <div className="flex md:items-start md:pt-2 shrink-0">
+                <span className="font-sans text-[9px] tracking-[0.25em] text-gold/45 uppercase border border-gold/15 px-3 py-1.5 self-start">
+                  {p.status}
+                </span>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Coming soon */}
-      <section className="px-6 py-16 max-w-7xl mx-auto">
-        <div className="border-t border-cream/[0.08] pt-12">
-          <p className="font-sans text-[9px] tracking-[0.5em] text-gold uppercase mb-10">In Development</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-cream/[0.06] border border-cream/[0.06]">
-            {comingSoon.map((item) => (
-              <div key={item.name} className="bg-earth p-8 flex flex-col gap-3">
-                <p className="font-sans text-[9px] tracking-[0.3em] text-cream/30 uppercase">{item.category}</p>
-                <p className="font-serif text-lg text-cream/70">{item.name}</p>
-                <p className="font-sans text-[10px] text-cream/30">{item.origin}</p>
+      {/* ── PIPELINE ── */}
+      <section className="px-6 py-24 md:py-32 border-b border-cream/[0.06] bg-earth-card">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 reveal">
+            <p className="font-sans text-[10px] tracking-[0.4em] text-gold uppercase mb-5">In Development</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-cream leading-[1.1]">
+              Four more products in the pipeline.
+            </h2>
+          </div>
+          <div className="divide-y divide-cream/[0.06]">
+            {pipeline.map((item, i) => (
+              <div key={item.name} className={`py-8 flex items-center justify-between gap-8 reveal reveal-d${i + 1}`}>
+                <div className="flex items-center gap-10">
+                  <p className="font-sans text-[10px] tracking-[0.3em] text-cream/25 uppercase hidden md:block w-32 shrink-0">{item.category}</p>
+                  <p className="font-serif text-xl md:text-2xl text-cream/55">{item.name}</p>
+                </div>
+                <p className="font-sans text-[10px] tracking-[0.25em] text-cream/25 uppercase shrink-0">{item.origin}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Standard callout */}
-      <section className="px-6 pb-24 max-w-7xl mx-auto">
-        <div className="border-t border-cream/[0.08] pt-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      {/* ── STANDARD CALLOUT ── */}
+      <section className="px-6 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center reveal">
           <div>
-            <p className="font-serif text-xl text-cream mb-2">What we test for</p>
-            <p className="font-sans text-cream/48 text-sm leading-relaxed max-w-md">
-              Heavy metals. Active compound content. Microbial safety. Pesticide residues. Every batch. Third-party verified.
+            <p className="font-sans text-[10px] tracking-[0.4em] text-gold uppercase mb-5">What we test for</p>
+            <p className="font-serif text-2xl md:text-3xl text-cream leading-snug">
+              Heavy metals. Active compounds. Microbial safety. Pesticide residues.
             </p>
           </div>
-          <Link
-            href="/our-standard"
-            className="font-sans text-[10px] tracking-[0.3em] text-cream/58 uppercase hover:text-gold transition-colors duration-200 shrink-0"
-          >
-            Our Standard →
-          </Link>
+          <div>
+            <p className="font-sans text-cream/55 text-[0.95rem] leading-[1.85] mb-8">
+              Every batch. Third-party verified. The Certificate of Analysis ships with every order.
+            </p>
+            <Link
+              href="/our-standard"
+              className="inline-flex items-center gap-3 font-sans text-[11px] tracking-[0.4em] uppercase text-cream/40 hover:text-gold transition-colors duration-300"
+            >
+              Our Standard <span className="font-serif text-base">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 

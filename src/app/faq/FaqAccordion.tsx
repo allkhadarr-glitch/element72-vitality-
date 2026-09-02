@@ -28,7 +28,7 @@ const faqs = [
       },
       {
         q: 'Why does Element 72 source shilajit from the Himalayas?',
-        a: 'Himalayan shilajit — specifically from high-altitude regions in Punjab, India — is considered the benchmark for fulvic acid content and mineral density. Our supplier, Aveda Ayur, is a verified source with full traceability. We do not use shilajit powder, extract blends, or resin reconstituted from powder. It is raw resin, tested and certified.',
+        a: 'High-altitude Himalayan resin is considered the benchmark for fulvic acid content and mineral density. We buy from a single licensed manufacturer with full batch traceability, and we do not publish their identity. We do not use shilajit powder, extract blends, or resin reconstituted from powder. It is raw resin, and the testing laboratory drew and sealed its own sample at source rather than receiving one chosen by the manufacturer.',
       },
     ],
   },
@@ -58,7 +58,7 @@ const faqs = [
     questions: [
       {
         q: 'What does "third-party tested" mean?',
-        a: 'It means our products are sent to an independent laboratory — not affiliated with us or our suppliers — for analysis before they are sold. We test for heavy metals (lead, mercury, arsenic, cadmium), microbial safety (E. coli, Salmonella, total plate count), active compound content (fulvic acid, thymoquinone), and pesticide residues. The Certificate of Analysis is available to customers upon request.',
+        a: 'It means our products are sent to an independent, NABL-accredited laboratory — not affiliated with us or our suppliers — for analysis before they are sold. The current shilajit report covers the heavy metals panel: lead, mercury, arsenic and cadmium. Microbial, pesticide and potency assays are commissioned separately and are published only once we hold the report. We do not claim a test we have not run.',
       },
       {
         q: 'What does "single-origin" mean?',
@@ -66,7 +66,7 @@ const faqs = [
       },
       {
         q: 'Are Element 72 products KEBS certified?',
-        a: 'Element 72 is in the process of obtaining Kenya Bureau of Standards (KEBS) certification for its products. Regulatory compliance is handled by Teleo Lab, our technical partner. We will not sell any product before the required certification is in place.',
+        a: 'For Shilajit Resin, yes. The Kenya Bureau of Standards permit to use the Standardization Mark is in place — Mark No. SM#102053, effective 9 July 2026, issued against KS 2455:2024, the general standard for food safety. The permit is held by Teleo Nutrilabs Ltd, our technical partner, and names Element 72 Vitality as the brand it covers. It covers Shilajit Resin only. Our other products are not covered by it and will not be sold before their own certification is in place.',
       },
     ],
   },
@@ -75,7 +75,7 @@ const faqs = [
     questions: [
       {
         q: 'When will products be available?',
-        a: 'Products will be available once KEBS certification is complete. Waitlist members will be notified 48 hours before public availability — with full sourcing documentation and Certificate of Analysis included. Join the waitlist on the homepage.',
+        a: 'The KEBS permit for Shilajit Resin is in place (SM#102053). Waitlist members will be notified 48 hours before public availability — with full sourcing documentation and Certificate of Analysis included. Join the waitlist on the homepage.',
       },
       {
         q: 'Where does Element 72 ship?',

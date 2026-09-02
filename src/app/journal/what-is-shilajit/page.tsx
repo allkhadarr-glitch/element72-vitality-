@@ -68,7 +68,7 @@ export default function ShilajitArticle() {
 
           <div className="flex flex-col gap-4 pl-4 border-l border-gold/30">
             <div>
-              <p className="text-cream/80 font-medium mb-1">Fulvic acid (40–60%)</p>
+              <p className="text-cream/80 font-medium mb-1">Fulvic acid</p>
               <p>The most important compound. Fulvic acid is a short-chain organic acid that acts as a carrier molecule — it binds to minerals and nutrients and transports them directly across cell membranes. This is what gives shilajit its reputation for bioavailability. Without fulvic acid, many minerals pass through the body unabsorbed.</p>
             </div>
             <div>
@@ -96,13 +96,13 @@ export default function ShilajitArticle() {
           </p>
 
           <p>
-            Element 72 sources raw resin from Aveda Ayur in Punjab, India — a verified supplier with full batch traceability. Every batch is tested by an independent third-party laboratory for:
+            Element 72 sources raw resin from a single licensed manufacturer with full batch traceability. Every batch is tested by an independent, NABL-accredited laboratory for:
           </p>
 
           <ul className="flex flex-col gap-2 pl-4">
             {[
               'Heavy metals — lead, mercury, arsenic, cadmium',
-              'Fulvic acid content — minimum 40%',
+
               'Microbial safety — E. coli, Salmonella, total plate count',
               'Pesticide residue screen',
               'Moisture content and purity',

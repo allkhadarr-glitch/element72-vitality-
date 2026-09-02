@@ -160,7 +160,7 @@ export default function CheckoutModal({
           <div className="mt-5 pt-5 border-t border-cream/[0.06] flex items-start gap-3">
             <div className="w-1 h-1 rounded-full bg-gold/40 mt-1.5 shrink-0" />
             <p className="font-sans text-[6px] tracking-[0.28em] text-cream/22 uppercase leading-relaxed">
-              Eurofins CoA ships with your order · Batch E72–SH01 · Secured by IntaSend
+              Eurofins CoA ships with your order · Batch MSRB03 · Secured by IntaSend
             </p>
           </div>
 

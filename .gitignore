@@ -6,3 +6,11 @@ npm-debug.log*
 .DS_Store
 
 .vercel
+
+# nested working copies — never commit (2.8GB)
+element72/
+element72 - Copy*/
+
+# internal / not for a public repo
+data sheet.pdf
+element72_audit.md

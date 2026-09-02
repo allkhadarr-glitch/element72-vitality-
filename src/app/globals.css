@@ -3,120 +3,116 @@
 @tailwind utilities;
 
 :root {
-  --font-playfair: 'Cormorant Garamond', serif;
-  --font-inter: 'Montserrat', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --bg: #09090B;
+  --copper: #B87333;
+  --amber: #C7923E;
+  --paper: #F5F5F0;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #080D08;
-  color: #F0E6D0;
+  background-color: #09090B;
+  color: #F5F5F0;
   font-family: var(--font-inter);
-  font-weight: 300;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Grain texture */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.055;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 128px 128px;
-}
-
-.font-serif { font-family: var(--font-playfair); }
-.font-sans  { font-family: var(--font-inter); }
-
-/* Serif headings always render at full weight */
 h1, h2, h3, blockquote { font-family: var(--font-playfair); font-weight: 400; }
 
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #080D08; }
-::-webkit-scrollbar-thumb { background: rgba(201, 165, 90, 0.35); }
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #09090B; }
+::-webkit-scrollbar-thumb { background: rgba(184,115,51,0.35); }
+::selection { background: rgba(199,146,62,0.22); color: #F5F5F0; }
 
-::selection { background-color: rgba(201,165,90,0.18); color: #F0E6D0; }
-
-/* ── Particle float ── */
-@keyframes float-particle {
-  0%   { transform: translateY(0px);    opacity: 0;   }
-  15%  { opacity: 1;                                  }
-  85%  { opacity: 0.4;                                }
-  100% { transform: translateY(-300px); opacity: 0;   }
+/* ── Float ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
 }
+.animate-float { animation: float 5.5s ease-in-out infinite; }
 
-/* ── "72." breathing ── */
-@keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.013); }
+/* ── Glow pulse ── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.06); }
 }
-.animate-breathe { animation: breathe 7s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 4.5s ease-in-out infinite; }
 
-/* ── Keyframes ── */
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 38s linear infinite; }
+
+/* ── Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.10s; }
+.reveal-d2 { transition-delay: 0.20s; }
+.reveal-d3 { transition-delay: 0.32s; }
+.reveal-d4 { transition-delay: 0.44s; }
+.reveal-d5 { transition-delay: 0.56s; }
+
+/* ── Fade up ── */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(22px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+.animate-fade-up { animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+.animate-fade-in { animation: fade-in 1.4s ease forwards; opacity: 0; }
+
+/* ── Glass card ── */
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.glass-copper {
+  background: rgba(184,115,51,0.05);
+  border: 1px solid rgba(184,115,51,0.18);
 }
 
-/* ── Hero entry animations ── */
-.animate-fade-up { animation: fade-up 0.9s ease forwards; opacity: 0; }
-.animate-fade-in { animation: fade-in 1.2s ease forwards; opacity: 0; }
-.animate-marquee { animation: marquee 36s linear infinite; }
+/* ── Glow divider ── */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,115,51,0.4), transparent);
+}
 
+/* ── Delay utilities ── */
 .delay-100 { animation-delay: 0.10s; }
 .delay-200 { animation-delay: 0.20s; }
 .delay-300 { animation-delay: 0.30s; }
 .delay-400 { animation-delay: 0.40s; }
 .delay-500 { animation-delay: 0.50s; }
 .delay-600 { animation-delay: 0.60s; }
-.delay-700 { animation-delay: 0.70s; }
-.delay-800 { animation-delay: 0.80s; }
 
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s ease, transform 0.85s ease;
-}
-.reveal.in-view { opacity: 1; transform: translateY(0); }
-.reveal-d1 { transition-delay: 0.10s; }
-.reveal-d2 { transition-delay: 0.22s; }
-.reveal-d3 { transition-delay: 0.34s; }
-.reveal-d4 { transition-delay: 0.46s; }
-.reveal-d5 { transition-delay: 0.58s; }
+/* ── Legacy (other pages still use these) ── */
+h1, h2, h3 { font-family: var(--font-playfair); }
 
-/* ── Page transition ── */
-@keyframes page-enter {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── Gold underline hover ── */
+/* Gold hover (legacy pages) */
 .gold-hover { position: relative; }
 .gold-hover::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
-  background: #C9A55A;
-  transition: width 0.35s ease;
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 0; height: 1px; background: #C9A55A;
+  transition: width 0.4s ease;
 }
 .gold-hover:hover::after { width: 100%; }
